@@ -53,13 +53,13 @@ pipeline {
                     mail to: "adityacalvin@gmail.com",
                       body: "The deployment to production was successful.",
                       subject: "Pipeline Status: Success - Deploy to Production",
-                      attachmentsPattern: '**/*.groovy'
+                      charset: '**/*.groovy'
                 }
                 failure {
                     mail to: "adityacalvin@gmail.com",
                       body: "The deployment to production has failed.",
                       subject: "Pipeline Status: Failure - Deploy to Production",
-                      attachmentsPattern: '**/*.groovy'
+                      charset: '**/*.groovy'
                 }
             }
         }
