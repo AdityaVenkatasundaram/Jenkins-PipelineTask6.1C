@@ -41,13 +41,6 @@ pipeline {
                 echo 'Tool used: Selenium'
 
             }
-        }
-        stage('Deploy to Production') {
-            steps {
-                echo 'Deploying application to production server using AWS CLI'
-                echo 'Tool used: AWS EC2'
-
-            }
             post{
                 success{
                     emailext subject: "Pipeline Status: Success - Deploy to Production",
@@ -63,5 +56,16 @@ pipeline {
                 }
             }
         }
+        stage('Deploy to Production') {
+            steps {
+                echo 'Deploying application to production server using AWS CLI'
+                echo 'Tool used: AWS EC2'
+
+            }
+            }
+
+        }
+
     }
-}
+
+
