@@ -53,13 +53,13 @@ pipeline {
                     emailext subject: "Pipeline Status: Success - Deploy to Production",
                       body: "The deployment to production was successful.",
                       to: "adityacalvin@gmail.com",
-                      attachmentsPattern: '**/*.log'
+                      attachmentsPattern: '**/*.groovy'
                 }
                 failure {
                     emailext subject: "Pipeline Status: Failure - Deploy to Production",
                       body: "The deployment to production has failed.",
                       to: "adityacalvin@gmail.com",
-                      attachmentsPattern: '**/*.log'
+                      attachmentsPattern: '**/*.groovy'
                 }
             }
         }
