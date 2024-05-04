@@ -44,18 +44,18 @@ pipeline {
             post{
                 success{
                     emailext{
-                        subject: "Jenkins Build: ${current.Build.fullDisplayName}",
-                        body: "The deployment to production was successful.",
-                        to: "adityacalvin@gmail.com",
-                        attachLog: true
+                        subject "Jenkins Build: ${current.Build.fullDisplayName}",
+                        body "The deployment to production was successful.",
+                        to "adityacalvin@gmail.com",
+                        attachLog true
                     } 
                 }
                 failure {
                     emailext{
-                      subject: "Jenkins Build: ${current.Build.fullDisplayName}",
-                      body: "The deployment to production has failed.",
-                      to: "adityacalvin@gmail.com",
-                      attachLog: true
+                      subject "Jenkins Build: ${current.Build.fullDisplayName}",
+                      body "The deployment to production has failed.",
+                      to "adityacalvin@gmail.com",
+                      attachLog true
                 }
             }
         }
