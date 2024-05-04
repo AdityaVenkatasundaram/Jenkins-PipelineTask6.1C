@@ -44,7 +44,6 @@ pipeline {
             post{
                 success{
                     emailext{
-
                         subject: "Pipeline Status: Success - Deploy to Production",
                         body: "The deployment to production was successful.",
                         to: "adityacalvin@gmail.com",
