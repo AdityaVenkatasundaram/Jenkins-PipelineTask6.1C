@@ -43,16 +43,20 @@ pipeline {
             }
             post{
                 success{
-                    emailext subject: "Pipeline Status: Success - Deploy to Production",
-                      body: "The deployment to production was successful.",
-                      to: "adityacalvin@gmail.com",
-                      attachmentsPattern: '**/*.groovy'
+                    emailext{
+
+                        subject: "Pipeline Status: Success - Deploy to Production",
+                        body: "The deployment to production was successful.",
+                        to: "adityacalvin@gmail.com",
+                        attachLog: true
+                    } 
                 }
                 failure {
-                    emailext subject: "Pipeline Status: Failure - Deploy to Production",
+                    emailext{
+                      subject: "Pipeline Status: Failure - Deploy to Production",
                       body: "The deployment to production has failed.",
                       to: "adityacalvin@gmail.com",
-                      attachmentsPattern: '**/*.groovy'
+                      attachlog: true
                 }
             }
         }
@@ -67,5 +71,5 @@ pipeline {
         }
 
     }
-
+}
 
