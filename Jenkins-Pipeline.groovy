@@ -55,7 +55,7 @@ pipeline {
                       subject: "Jenkins Build: ${current.Build.fullDisplayName}",
                       body: "The deployment to production has failed.",
                       to: "adityacalvin@gmail.com",
-                      attachlog: true
+                      attachLog: true
                 }
             }
         }
