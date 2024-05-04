@@ -36,12 +36,10 @@ pipeline {
             }
             post {
                 always {
-                    emailext {
-                        subject "Jenkins Build: ${current.Build.fullDisplayName}"
-                        body "The deployment to production was successful."
-                        to "adityacalvin@gmail.com"
-                        attachLog true
-                    } 
+                    emailext subject: "Jenkins Build: ${current.Build.fullDisplayName}",
+                        body: "The deployment to production was successful.",
+                        to: "adityacalvin@gmail.com",
+                        attachLog: true
                 }
             }
         }
