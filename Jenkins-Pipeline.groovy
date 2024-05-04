@@ -36,7 +36,7 @@ pipeline {
             }
             post {
                 always {
-                    emailext subject: "Jenkins Build: ${current.Build.fullDisplayName}",
+                    emailext subject: "Jenkins Build: ${env.JOB_NAME} ${env.BUILD_NUMBER}",
                         body: "The deployment to production was successful.",
                         to: "adityacalvin@gmail.com",
                         attachLog: true
